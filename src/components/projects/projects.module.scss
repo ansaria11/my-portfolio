@@ -1,0 +1,14 @@
+.container {
+    height: 100vh;
+}
+
+.test {
+    width: 65%;
+    height: 50em;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: auto;
+    transform: translateY(-3em);
+}

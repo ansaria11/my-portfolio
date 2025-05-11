@@ -1,0 +1,17 @@
+.container {
+    display: block;
+    position: relative;
+    overflow: hidden
+}
+
+.text {
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.first {
+    position: relative;
+    text-align: center;
+}

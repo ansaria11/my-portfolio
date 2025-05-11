@@ -1,16 +1,44 @@
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/fonts/poppins/Poppins-Light.ttf) format("truetype");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/fonts/poppins/Poppins-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/fonts/poppins/Poppins-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/fonts/poppins/Poppins-Bold.ttf) format("truetype");
+  font-weight: 800;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(255, 255, 255, 1);
+  background-color: #0a0a0a;
+
+  font-family: "Poppins", serif;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  cursor: none;
 }
 
 a {
@@ -25,9 +53,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1 {
