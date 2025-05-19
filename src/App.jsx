@@ -5,6 +5,8 @@ import { gsap } from "gsap"
 import { ScrollSmoother, ScrollTrigger } from 'gsap/all'
 import Projects from './components/projects'
 import Navigator from './components/navigator'
+import Socials from './components/socials'
+import GradTest from './components/gradTest'
 
 function App() {
 
@@ -12,6 +14,9 @@ function App() {
     gsap.registerPlugin(ScrollTrigger)
 
     const cursorRef = useRef()
+    const glowRef = useRef()
+    const containerRef = useRef()
+    const heroRef = useRef()
     const prevScrollRef = useRef(0)
     const [position, setPosition] = useState({x: 0, y: 0})
     const [visible, setVisible] = useState(false)
@@ -24,11 +29,29 @@ function App() {
             effects: true,
             onUpdate: handleScrollUpdate,
         })
+        /*
+        gsap.to(glowRef.current, {
+            rotate: 360,
+            repeat: -1,
+            duration: 15,
+            ease: "linear"
+        })
+
+        gsap.to(document.documentElement, {
+            "--background-colour": "#fff",
+            ease: 'none',
+            scrollTrigger: {
+                trigger: heroRef.current,
+                start: "bottom bottom",
+                end: "top+=100% top",
+                scrub: true,
+            }
+        })
+            */
     }, [])
 
     useEffect(() => {
         const scale = getComputedStyle(document.documentElement).getPropertyValue('--cursor-size') || "30px"
-        const blur = scale == "30px" ? "blur(7px)" : "blur(0px)"
 
         gsap.to(cursorRef.current, {
             x: position.x,
@@ -38,10 +61,17 @@ function App() {
             xPercent: -50,
             yPercent: -50,
             duration: 0.3,
-            backdropFilter: blur,
             ease: "power2.out",
         })
 
+        /*
+        gsap.to(glowRef.current, {
+            x: position.x,
+            y: position.y,
+            duration: 1.5,
+            ease: "power2.out",
+        })
+        */
     }, [position])
 
     const handleScrollUpdate = () => {
@@ -70,13 +100,23 @@ function App() {
         onMouseLeave={handleCursorLeave}
     >
         <div id="smooth-wrapper">
-            <div id="smooth-content" className="main">
-                <Hero/>
-                <Projects/>
+            <div ref={containerRef} id="smooth-content" className="main">
+                <section data-speed={0.7 + 0.3} ref={heroRef}>
+                    <Hero/>
+                </section>
+                <section>
+                    <Projects/>
+                </section>
             </div>
         </div>
         <Navigator/>
+        <Socials/>
         <div style={{display: !visible && "none"}} ref={cursorRef} className="blur"/>
+        {false && <div ref={glowRef} className="glowContainer">
+            <div className="glow glowRed"/>
+            <div className="glow glowBlue"/>
+            <div className="glow glowPink"/>
+        </div>}
     </div>
     
     

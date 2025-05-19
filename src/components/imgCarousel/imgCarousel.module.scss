@@ -1,0 +1,51 @@
+.container {
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.imageTrack {
+    display: flex;
+}
+
+.image {
+    display: inline-block;
+    object-fit: cover;
+    margin-right: 5%;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    padding: 0.75em;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(24, 24, 24, 0.555);
+    position: absolute;
+    transform: translate(0, -50%);
+    z-index: 1;
+    border-radius: 50%;
+}
+
+
+.left {
+    top: 50%;
+    left: 1em;
+}
+
+.right {
+    top: 50%;
+    right: 1em;
+}
+
+.disabled {
+    opacity: 0.5;
+}

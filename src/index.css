@@ -27,18 +27,23 @@
   line-height: 1.5;
   font-weight: 400;
 
+  --background-colour: #000;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 1);
-  background-color: #0a0a0a;
+  background-color: var(--background-colour, #ffffff);
 
   font-family: "Poppins", serif;
+  font-size: 0.7vw;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  cursor: none;
+  cursor: none !important;
+  --cursor-scale: 1;
+  --cursor-size: 30px;
+  --cursor-blur: 7px;
 }
 
 a {
@@ -91,4 +96,9 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+html, html * , html *::before, html *::after {
+  cursor: none !important;
 }

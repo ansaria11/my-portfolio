@@ -1,14 +1,22 @@
 .container {
-    height: 100vh;
+    background-color: rgba(0, 0, 0, 1);
+    position: relative;
+    padding: 2em 30em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
-.test {
-    width: 65%;
-    height: 50em;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid white;
-    background-color: rgba(0, 0, 0, 0.5);
-    margin: auto;
-    transform: translateY(-3em);
+.title {
+    font-size: 3em;
+    font-weight: 400;
+    text-align: center;
+    margin: 1em;
 }
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+

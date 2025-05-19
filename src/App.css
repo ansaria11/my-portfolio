@@ -1,10 +1,9 @@
 #root {
   margin: 0;
-  --cursor-scale: 1;
-  --cursor-size: 30px;
 }
 
 .main {
+  padding: 0em;
 }
 
 .blur {
@@ -15,6 +14,36 @@
     border-radius: 50%;
     border: 3px solid #fff;
     pointer-events: none;
+    backdrop-filter: blur(var(--cursor-blur));
+    transition: backdrop-filter 0.5s ease;
+}
+
+.glowContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glow {
+  border-radius: 50%;
+  width: 1000px;
+  height: 1000px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.glowRed {
+  background: radial-gradient(circle at 50% 50%, rgb(255, 0, 0), transparent 40%);
+}
+
+.glowPink {
+  background: radial-gradient(circle at 40% 40%, rgb(255, 0, 200), transparent 40%);
+}
+
+.glowBlue {
+  background: radial-gradient(circle at 40% 50%, rgb(0, 153, 255), transparent 40%);
 }
   
 :root::-webkit-scrollbar {

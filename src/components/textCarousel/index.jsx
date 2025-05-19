@@ -31,8 +31,6 @@ export default function TextCarousel({textOptions}) {
         if (!scopeEl) return;
 
         const ctx = gsap.context(() => {
-          
-            console.log("hello")
 
             const selectors = options.map((_, i) => scopeEl.querySelector(`#split-${i}`))
             

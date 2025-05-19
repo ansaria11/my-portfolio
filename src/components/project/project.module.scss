@@ -1,0 +1,68 @@
+.projectContainer {
+    border: 1px solid rgb(56, 56, 56);
+    border-radius: 15px;
+    margin-inline: auto;
+    display: flex;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.247);
+    padding: 2em;
+    justify-content: space-between;
+    gap: 3em;
+    flex-shrink: 0;
+}
+
+.projectText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.link {
+    height: 0.8em;
+    align-self: center;
+}
+
+.subText {
+    display: flex;
+    font-size: 1.2em;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(206, 206, 255);
+}
+
+.projectTitle {
+    font-size: 2.5em;
+    display: inline-flex;
+    gap: 0.2em;
+    box-sizing: border-box;
+    border-bottom: 4px solid transparent;
+    transition: border 0.2s ease;
+}
+
+
+.titleHover {
+    border-bottom: 4px solid white;
+}
+
+.projectDesc {
+    font-size: 1.4em;
+    color: rgba(255, 255, 255, 0.781)
+}
+
+.projectSkills {
+    display: flex;
+    gap: 1em;
+}
+
+.projectSkill {
+    border: 1px solid rgb(56, 56, 56);
+    padding: 0.25em 0.5em;
+    border-radius: 10px;
+}
+
+.projectImage {
+    width: 40em;
+    height: 25em;
+    object-fit: cover;
+    border-radius: 15px;
+}

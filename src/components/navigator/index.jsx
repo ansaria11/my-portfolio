@@ -6,13 +6,13 @@ export default function Navigator() {
 
     return (
         <div className={cn(s.navContainer)}>
-            <Pressable>
+            <Pressable className={s.text} hoverName={s.hover}>
                 About
             </Pressable>
-            <Pressable>
+            <Pressable className={s.text} hoverName={s.hover}>
                 Projects
             </Pressable>
-            <Pressable>
+            <Pressable className={s.text} hoverName={s.hover} >
                 Contact
             </Pressable>
         </div>
