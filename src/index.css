@@ -27,7 +27,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  --background-colour: #000;
+  --background-colour: #f0f1fa;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 1);
   background-color: var(--background-colour, #ffffff);
@@ -44,6 +44,7 @@
   --cursor-scale: 1;
   --cursor-size: 30px;
   --cursor-blur: 7px;
+  --cursor-colour: #000;
 }
 
 a {

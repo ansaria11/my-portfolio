@@ -1,0 +1,52 @@
+.wrapper {
+    position: relative;
+}
+
+.container {
+    color: black;
+    padding: 10vw;
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    row-gap: 7em;
+    z-index: 1;
+}
+
+.top {
+    
+}
+
+.textMask {
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 1.2em;
+}
+
+.headerText {
+    font-size: 10em;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+    display: block;
+    grid-column: 1 / span 10;
+    
+}
+
+.mainText {
+    font-size: 2em;
+    grid-column: 6 / span 10;
+}
+
+.projects {
+
+}
+
+.svg {
+    display: inline;
+    overflow: visible;
+    position: absolute;
+    z-index: -1;
+    top: 5em;
+    height: 100%;
+    width: auto;
+}

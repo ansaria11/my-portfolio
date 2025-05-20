@@ -12,10 +12,10 @@
     width: var(--cursor-size);
     height: var(--cursor-size);
     border-radius: 50%;
-    border: 3px solid #fff;
+    border: 3px solid var(--cursor-colour);
     pointer-events: none;
     backdrop-filter: blur(var(--cursor-blur));
-    transition: backdrop-filter 0.5s ease;
+    transition: backdrop-filter 0.5s ease, border 0.5s ease;
 }
 
 .glowContainer {

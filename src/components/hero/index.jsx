@@ -30,12 +30,22 @@ export default function Hero() {
         };
     }, [])
 
+    const handleMouseEnter = (e) => {
+        document.documentElement.style.setProperty("--cursor-colour", "#fff");
+    }
+
+    const handleMouseLeave = (e) => {
+        document.documentElement.style.setProperty("--cursor-colour", "#000");
+    }
+    
 
     return (
         <>
         <div
         style={{ backgroundImage: `url(${hero})` }}
         className={cn(s.hero)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         >
             <div className={cn(s.textContainer)}>
                 <div>

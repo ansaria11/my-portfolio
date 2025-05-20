@@ -25,7 +25,7 @@ export default function TextCarousel({textOptions}) {
 
     useLayoutEffect(() => {
 
-        const speed = 5
+        const speed = 3
 
         const scopeEl = containerRef.current;
         if (!scopeEl) return;
@@ -42,6 +42,7 @@ export default function TextCarousel({textOptions}) {
 
             const tl = gsap.timeline({
                 repeat: -1,
+                delay: -speed + 1
             })
 
             tl.to({}, {duration: speed - 0.6})

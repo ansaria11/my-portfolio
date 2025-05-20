@@ -7,6 +7,7 @@ import Projects from './components/projects'
 import Navigator from './components/navigator'
 import Socials from './components/socials'
 import GradTest from './components/gradTest'
+import About from './components/about'
 
 function App() {
 
@@ -103,6 +104,9 @@ function App() {
             <div ref={containerRef} id="smooth-content" className="main">
                 <section data-speed={0.7 + 0.3} ref={heroRef}>
                     <Hero/>
+                </section>
+                <section>
+                    <About/>
                 </section>
                 <section>
                     <Projects/>
