@@ -51,7 +51,7 @@ export default function TextCarousel({textOptions}) {
                 if (i != options.length - 1)
                 splitsRef.current.forEach(split => {
                     tl.to(split.chars, {
-                        yPercent: "-=50",
+                        yPercent: "-=100",
                         stagger: 0.05,
                         duration: 0.6,
                         ease: 'power2.out',

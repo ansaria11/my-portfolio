@@ -18,82 +18,84 @@ export default function About() {
     gsap.registerPlugin(SplitText)
 
     useEffect(() => {
-        gsap.fromTo(
-            pathRef.current,
-            { drawSVG: "0%" }, // start with 0% of the path visible
-            {
-                drawSVG: "100%",  // draw the whole path
+        document.fonts.ready.then(() => {
+            gsap.fromTo(
+                pathRef.current,
+                { drawSVG: "0%" }, // start with 0% of the path visible
+                {
+                    drawSVG: "100%",  // draw the whole path
+                    scrollTrigger: {
+                        trigger: pathRef.current,
+                        start: "top 80%",     // when the top of the path hits 80% of viewport
+                        end: "120% 80%",    // animation ends when bottom hits 20% of viewport
+                        scrub: true,          // ties animation progress to scroll
+                    },
+                    ease: "power1.inOut",
+                }
+            );
+
+            const splitPara = SplitText.create(paraRef.current, { type: "lines" })
+            gsap.set(splitPara.lines, { opacity: 0, y: 30 });
+
+            gsap.fromTo(
+                splitPara.lines,
+                { opacity: 0,   y: 30 },   // “start” state (invisible + shifted left)
+                {
+                opacity: 1, 
+                y: 0, 
+                ease: "power2.out",
                 scrollTrigger: {
-                    trigger: pathRef.current,
-                    start: "top 80%",     // when the top of the path hits 80% of viewport
-                    end: "120% 80%",    // animation ends when bottom hits 20% of viewport
-                    scrub: true,          // ties animation progress to scroll
+                    trigger: paraRef.current,
+                    start: "top 80%"
                 },
-                ease: "power1.inOut",
-            }
-        );
+                duration: 0.5,
+                stagger: 0.05,
+                }
+            );
 
-        const splitPara = SplitText.create(paraRef.current, { type: "lines" })
-        gsap.set(splitPara.lines, { opacity: 0, y: 30 });
-        
-        gsap.fromTo(
-            splitPara.lines,
-            { opacity: 0,   y: 30 },   // “start” state (invisible + shifted left)
-            {
-              opacity: 1, 
-              y: 0, 
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: paraRef.current,
+            const titleTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: titleRef.current,
                 start: "top 80%"
-              },
-              duration: 0.5,
-              stagger: 0.05,
-            }
-        );
-
-        const titleTl = gsap.timeline({
-        scrollTrigger: {
-            trigger: titleRef.current,
-            start: "top 80%"
-        },
-        defaults: {
-            ease: "power2.out"
-        }
-        });
-
-        const topSplit = SplitText.create(titleTopRef.current, { type: "words" })
-        const botSplit = SplitText.create(titleBotRef.current, { type: "words" })
-
-        gsap.set(topSplit.words, { y: "100%" });
-        gsap.set(botSplit.words, { y: "-100%" });
-
-        titleTl.fromTo(
-            topSplit.words,
-            { y: "100%" },
-            {
-                y: 0,
-                duration: 0.5,
-                stagger: 0.1,
-            }
-        ).to(
-            topSplit.words,
-            {
-                x: "0.5em",
-                duration: 0.5,
-                stagger: -0.05,
-            }
-        ).fromTo(
-            botSplit.words,
-            { y: "-100%" },
-            {
-                y: 0,
-                duration: 0.5,
-                stagger: 0.1,
             },
-            0.2
-        )
+            defaults: {
+                ease: "expo.out"
+            }
+            });
 
+            const topSplit = SplitText.create(titleTopRef.current, { type: "words" })
+            const botSplit = SplitText.create(titleBotRef.current, { type: "words" })
+
+            gsap.set(topSplit.words, { y: "100%" });
+            gsap.set(botSplit.words, { y: "-100%" });
+
+            titleTl.fromTo(
+                topSplit.words,
+                { y: "100%" },
+                {
+                    y: 0,
+                    duration: 0.5,
+                    stagger: 0.1,
+                }
+            ).to(
+                topSplit.words,
+                {
+                    x: "1em",
+                    duration: 1,
+                    stagger: -0.1,
+                },
+                ">"
+            ).fromTo(
+                botSplit.words,
+                { y: "-100%" },
+                {
+                    y: 0,
+                    duration: 0.5,
+                    stagger: 0.1,
+                },
+                0.2
+            )
+        })
       }, []);
     
     //  Imagined Design Delivered Code
