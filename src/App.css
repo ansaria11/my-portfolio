@@ -15,7 +15,48 @@
     border: 3px solid var(--cursor-colour);
     pointer-events: none;
     backdrop-filter: blur(var(--cursor-blur));
-    transition: backdrop-filter 0.5s ease, border 0.5s ease;
+    transition: backdrop-filter 0.5s ease, border 0.5s ease, opacity 0s ease;
+    opacity: var(--cursor-opacity);
+    top: 0;
+    left: 0;
+}
+
+.boxCursor {
+  aspect-ratio: 16 / 9;
+  height: 20em;
+  border-radius: 15px;
+  background-color: rgb(41, 41, 41);
+  position: fixed;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.cursorImage {
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background-position: center;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cursorImageTrack {
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.radians {
+  background-color: white;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 .glowContainer {
@@ -44,6 +85,11 @@
 
 .glowBlue {
   background: radial-gradient(circle at 40% 50%, rgb(0, 153, 255), transparent 40%);
+}
+
+.footer {
+  height: 50vh;
+  background-color: rgb(27, 27, 27);
 }
   
 :root::-webkit-scrollbar {

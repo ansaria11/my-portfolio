@@ -5,6 +5,7 @@
 .container {
     color: black;
     padding: 10vw;
+    padding-bottom: 5vw;
     display: grid;
     grid-template-columns: repeat(10, minmax(0, 1fr));
     row-gap: 7em;
@@ -12,7 +13,7 @@
 }
 
 .top {
-    
+     
 }
 
 .textMask {
@@ -47,6 +48,6 @@
     position: absolute;
     z-index: -1;
     top: 5em;
-    height: 100%;
+    height: 140%;
     width: auto;
 }
